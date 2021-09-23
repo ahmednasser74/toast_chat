@@ -31,6 +31,8 @@ abstract class ChatRemoteDataSource {
   Future<CubeFile> uploadCubeFile(File file);
 
   Future<CubeDialog> createNewGroupDialog(List<int> users, String groupName);
+
+  Future<PagedResult<CubeDialog>?> getGroupDialog();
 }
 
 class ChatRemoteDataSourceImp implements ChatRemoteDataSource {
@@ -153,5 +155,10 @@ class ChatRemoteDataSourceImp implements ChatRemoteDataSource {
     newGroupDialog.name = groupName;
     _dialog = await createDialog(newGroupDialog);
     return _dialog;
+  }
+
+  @override
+  Future<PagedResult<CubeDialog>?> getGroupDialog() async {
+    return await getDialogs();
   }
 }

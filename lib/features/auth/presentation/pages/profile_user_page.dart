@@ -49,7 +49,7 @@ class ProfileUserPage extends GetView<ProfileController> {
                                       height: res.getHeight(20),
                                     ),
                                   )
-                                : CircleImageWidget(
+                                : CircleImageWithFirstCharWidget(
                                     avatar: avatar.toString(),
                                     fullName: controller.fullNameTEC.text,
                                     imageSize: 80,

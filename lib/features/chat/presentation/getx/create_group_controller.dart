@@ -1,12 +1,12 @@
 import 'package:connectycube_chat/core/usecases/usecase.dart';
 import 'package:connectycube_chat/features/chat/domin/usecases/create_new_group_dialog_use_casr.dart';
+import 'package:connectycube_chat/features/chat/domin/usecases/get_group_dialog_use_case.dart';
 import 'package:connectycube_chat/features/chat/domin/usecases/get_users_use_case.dart';
 import 'package:connectycube_sdk/connectycube_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CreateGroupController extends GetxController
-    with StateMixin<PagedResult<CubeUser>?> {
+class CreateGroupController extends GetxController with StateMixin {
   CreateGroupController({
     required this.createNewGroupDialogUseCase,
     required this.getUsersUseCase,
@@ -16,8 +16,8 @@ class CreateGroupController extends GetxController
   final GetUsersUseCase getUsersUseCase;
 
   final TextEditingController groupNameTEC = TextEditingController(text: '');
-  RxBool _loadingIndicator = false.obs;
-  PagedResult<CubeUser>? users;
+  final RxBool _loadingIndicator = false.obs;
+  late PagedResult<CubeUser>? users;
 
   get getLoadingIndicator => _loadingIndicator.value;
 

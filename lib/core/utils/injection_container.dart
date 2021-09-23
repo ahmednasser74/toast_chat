@@ -1,5 +1,7 @@
 import 'package:connectycube_chat/features/chat/domin/usecases/create_new_group_dialog_use_casr.dart';
+import 'package:connectycube_chat/features/chat/domin/usecases/get_group_dialog_use_case.dart';
 import 'package:connectycube_chat/features/chat/presentation/getx/create_group_controller.dart';
+import 'package:connectycube_chat/features/chat/presentation/getx/get_group_dialog_controller.dart';
 
 import '../../features/auth/domin/usecases/is_online_usecase.dart';
 import '../../features/auth/presentation/getx/offline_controller.dart';
@@ -149,6 +151,9 @@ class Injection {
     sl.registerLazySingleton<CreateNewGroupDialogUseCase>(
       () => CreateNewGroupDialogUseCase(chatRepository: sl()),
     );
+    sl.registerLazySingleton<GetGroupDialogUseCase>(
+      () => GetGroupDialogUseCase(chatRepository: sl()),
+    );
     // Controllers
     sl.registerFactory<ChannelsController>(
       () => ChannelsController(
@@ -178,6 +183,9 @@ class Injection {
     sl.registerFactory<CreateGroupController>(() => CreateGroupController(
           createNewGroupDialogUseCase: sl(),
           getUsersUseCase: sl(),
+        ));
+    sl.registerFactory<GetGroupDialogController>(() => GetGroupDialogController(
+          getGroupDialogUseCase: sl(),
         ));
 
     // Data sources

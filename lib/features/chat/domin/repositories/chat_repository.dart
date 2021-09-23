@@ -20,4 +20,5 @@ abstract class ChatRepository {
   Future<CubeMessage> sendVoiceRecord(String? path);
   // Future<void> deleteRecord();
   Future<CubeDialog> createNewGroupDialog(List<int> users,String groupName);
+  Future<PagedResult<CubeDialog>?> getGroupDialog();
 }

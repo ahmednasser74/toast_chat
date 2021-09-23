@@ -97,4 +97,9 @@ class ChatRepositoryImp implements ChatRepository {
   Future<CubeDialog> createNewGroupDialog(List<int> users, String groupName) {
     return chatRemoteDataSource.createNewGroupDialog(users, groupName);
   }
+
+  @override
+  Future<PagedResult<CubeDialog>?> getGroupDialog() async {
+    return await chatRemoteDataSource.getGroupDialog();
+  }
 }

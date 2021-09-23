@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class CircleImageWidget extends StatelessWidget {
+class CircleImageWithFirstCharWidget extends StatelessWidget {
   final String avatar;
   final String fullName;
   final double imageSize;
 
-  CircleImageWidget({
+  CircleImageWithFirstCharWidget({
     required this.avatar,
     required this.fullName,
     required this.imageSize,

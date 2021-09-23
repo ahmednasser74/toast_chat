@@ -25,7 +25,6 @@ class ChannelsController extends GetxController
   late TabController tabController;
   PagedResult<CubeUser>? users;
   late CubeUser cubeUser;
-  List<CubeDialog> dialogList = [];
 
   @override
   void onInit() {

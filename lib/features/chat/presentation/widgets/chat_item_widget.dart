@@ -24,7 +24,7 @@ class ChatItemWidget extends StatelessWidget {
         decoration: CustomStyle.containerShadowDecoration,
         child: Row(
           children: [
-            CircleImageWidget(
+            CircleImageWithFirstCharWidget(
               avatar: cubeUser.avatar.toString(),
               fullName: cubeUser.fullName ?? '',
               imageSize: 30,

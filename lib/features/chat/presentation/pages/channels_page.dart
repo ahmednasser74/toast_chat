@@ -80,7 +80,7 @@ class ChannelsPage extends GetView<ChannelsController> {
                   onTap: () => Get.toNamed(Routes.profileUserPage),
                   child: Hero(
                     tag: 'profile_hero',
-                    child: CircleImageWidget(
+                    child: CircleImageWithFirstCharWidget(
                       avatar: cachedUser.avatar.toString(),
                       fullName: cachedUser.fullName ?? 'A',
                       imageSize: 24,
